@@ -27,7 +27,7 @@ export class LambdaFunctionVpcStack extends Stack {
     });
 
     const lambdaFunction = new Function(this, 'my-lambda-function', {
-      runtime: Runtime.NODEJS_18_X,
+      runtime: Runtime.NODEJS_20_X,
       vpc,
       vpcSubnets: {
         subnetType: SubnetType.PRIVATE_WITH_EGRESS,
