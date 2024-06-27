@@ -34,8 +34,8 @@ export class LambdaFunctionVpcStack extends Stack {
       },
       memorySize: 1024,
       timeout: Duration.seconds(5),
-      handler: '',
-      code: Code.fromAsset(join(__dirname, '')),
+      handler: 'index.handler',
+      code: Code.fromAsset(join(__dirname, '/../lambda')),
     });
 
   }
