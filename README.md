@@ -1,8 +1,14 @@
 # Create AWS Lambda Functions in a VPC using CDK
 
-This is a blank project for CDK development with TypeScript.
+This project demonstrates how to create an AWS Lambda function within a VPC using AWS CDK (Cloud Development Kit).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- [AWS CLI](https://aws.amazon.com/cli/)
+- [Node.js](https://nodejs.org/)
+- [AWS CDK](https://aws.amazon.com/cdk/)
 
 ## Useful commands
 
