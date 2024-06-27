@@ -1,4 +1,4 @@
-# Welcome to your CDK TypeScript project
+# Create AWS Lambda Functions in a VPC using CDK
 
 This is a blank project for CDK development with TypeScript.
 
