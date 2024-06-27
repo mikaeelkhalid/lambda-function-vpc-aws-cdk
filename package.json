@@ -2,7 +2,7 @@
   "name": "lambda-function-vpc-aws-cdk",
   "version": "0.1.0",
   "bin": {
-    "lambda-function-vpc-aws-cdk": "bin/lambda-function-vpc-aws-cdk.js"
+    "app": "bin/app.js"
   },
   "scripts": {
     "build": "tsc",
