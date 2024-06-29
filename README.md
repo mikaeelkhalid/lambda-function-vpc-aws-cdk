@@ -63,5 +63,5 @@ cdk destroy
 
 For detailed explanation and code snippets, refer to the following [blog post](https://blog.mikaeels.com/provisioning-a-lambda-function-in-a-vpc-using-aws-cdk).
 
-**Remember to destroy the stack to avoid unnecessary costs.**
+:exclamation: **Remember to destroy the stack to avoid unnecessary costs.**
 
