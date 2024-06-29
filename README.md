@@ -1,20 +1,75 @@
 # Create AWS Lambda Functions in a VPC using CDK
 
-This project demonstrates how to create an AWS Lambda function within a VPC using AWS CDK (Cloud Development Kit).
+[![Mikaeel Khalid](https://badgen.now.sh/badge/by/mikaeelkhalid/purple)](https://github.com/mikaeelkhalid)
 
-## Prerequisites
+This repository contains code for provisioning an AWS Lambda function within a VPC and enabling it to access the internet using AWS Cloud Development Kit (CDK).
 
-Before you begin, ensure you have the following installed:
+## Table of Contents
 
-- [AWS CLI](https://aws.amazon.com/cli/)
-- [Node.js](https://nodejs.org/)
-- [AWS CDK](https://aws.amazon.com/cdk/)
+- [Introduction](#introduction)
+- [Architecture Overview](#architecture-overview)
+- [Setup](#setup)
+- [Deployment](#deployment)
+- [Cleanup](#cleanup)
+- [Code Explanation](#code-explanation)
+- [Lambda Function Code](#lambda-function-code)
 
-## Useful commands
+## Introduction
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
-* `npx cdk synth`   emits the synthesized CloudFormation template
+In modern cloud architectures, securing your resources within a Virtual Private Cloud (VPC) while maintaining necessary internet access is a common requirement. AWS Lambda functions, by default, do not have internet access when placed in a VPC, which can be a hurdle for functions needing to interact with external services or APIs. This project demonstrates how to provision a Lambda function within a VPC and enable it to access the internet using AWS CDK.
+
+## Architecture Overview
+
+1. **VPC Creation**: A VPC with both public and private subnets is created.
+2. **NAT Gateway**: A NAT Gateway is provisioned in the public subnet to allow internet access from the private subnet.
+3. **Lambda Function**: The Lambda function is launched in the private subnet with necessary permissions and configurations to manage network interfaces and access the internet via the NAT Gateway.
+
+## Setup
+
+### Prerequisites
+
+- Node.js (v12.x or later)
+- AWS CDK (v2.x or later)
+- AWS CLI configured with appropriate permissions
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mikaeelkhalid/lambda-function-vpc-aws-cdk.git
+   cd lambda-function-vpc-aws-cdk
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Deployment
+
+To deploy the stack, run:
+
+```bash
+cdk deploy
+```
+
+This command will provision the VPC, NAT Gateway, and the Lambda function with the required configurations.
+
+## Cleanup
+
+To delete the resources and avoid ongoing costs from the NAT Gateway, run:
+
+```bash
+cdk destroy
+```
+
+## Code Explanation
+
+For detailed explanation and code snippets, refer to the following [blog post](https://blog.mikaeels.com/provisioning-a-lambda-function-in-a-vpc-using-aws-cdk).
+
+### Summary
+
+In this project, we provisioned a Lambda function within a VPC that can access the internet. The AWS CDK simplified the process by handling the VPC components, role creation, and security group configuration. If your Lambda function doesn't need internet access, set `allowPublicSubnet` to `true` to place it in a public subnet, acknowledging this limitation.
+
+Remember to destroy the stack to avoid unnecessary costs.
+
