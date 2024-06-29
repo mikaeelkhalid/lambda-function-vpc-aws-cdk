@@ -63,9 +63,5 @@ cdk destroy
 
 For detailed explanation and code snippets, refer to the following [blog post](https://blog.mikaeels.com/provisioning-a-lambda-function-in-a-vpc-using-aws-cdk).
 
-### Summary
-
-In this project, we provisioned a Lambda function within a VPC that can access the internet. The AWS CDK simplified the process by handling the VPC components, role creation, and security group configuration. If your Lambda function doesn't need internet access, set `allowPublicSubnet` to `true` to place it in a public subnet, acknowledging this limitation.
-
-Remember to destroy the stack to avoid unnecessary costs.
+**Remember to destroy the stack to avoid unnecessary costs.**
 
