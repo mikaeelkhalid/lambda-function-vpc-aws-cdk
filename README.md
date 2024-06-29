@@ -14,10 +14,6 @@ This repository contains code for provisioning an AWS Lambda function within a V
 - [Code Explanation](#code-explanation)
 - [Lambda Function Code](#lambda-function-code)
 
-## Introduction
-
-In modern cloud architectures, securing your resources within a Virtual Private Cloud (VPC) while maintaining necessary internet access is a common requirement. AWS Lambda functions, by default, do not have internet access when placed in a VPC, which can be a hurdle for functions needing to interact with external services or APIs. This project demonstrates how to provision a Lambda function within a VPC and enable it to access the internet using AWS CDK.
-
 ## Architecture Overview
 
 1. **VPC Creation**: A VPC with both public and private subnets is created.
